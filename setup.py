@@ -30,6 +30,7 @@ setup(
     long_description=read("README.md"),
     long_description_content_type="text/markdown",
     author="Pati LinA",
+    python_requires=">=3.8",
     packages=find_packages(), #vai retornar todos os pacotes q tenham o __init__ dentro
     entry_points={
         "console_scripts": [
