@@ -6,3 +6,7 @@ testpaths = [
     "tests",
     "integration"
 ]
+
+markers = [
+    "integration: marks tests as integration tests"
+]
