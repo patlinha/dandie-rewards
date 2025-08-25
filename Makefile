@@ -1,4 +1,4 @@
-.PHONY: install virtualenv ipython test watch
+.PHONY: install virtualenv ipython test watch pflake8
 
 install:
 	@echo "Installing for dev environment"
@@ -9,6 +9,9 @@ virtualenv:
 
 ipython:
 	@.venv/bin/ipython
+
+lint:
+	@.venv/bin/pflake8
 
 test:
 	@.venv/bin/pytest -vv -s
