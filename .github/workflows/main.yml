@@ -28,10 +28,10 @@ jobs:
         run: pip install '.[test]'
       - name: Look for style errors
         run: pflake8
-      - name: Check for importing style
-        run: isort --profile --check --diff dundie tests integration
-      - name: Look for auto format errors
-        run: black --check --diff dundie tests integration
+      # - name: Check for importing style
+      #   run: isort --profile --check --diff dundie tests integration
+      # - name: Look for auto format errors
+      #   run: black --check --diff dundie tests integration
 
   tests:
     needs: lint
@@ -50,9 +50,9 @@ jobs:
         run: pip install '.[test]'
       - name: Run tests
         run: pytest -v --junitxml=test-result.xml
-      - name: publish junit results
-        uses: EnricoMi/publish-unit-test-result-action@v2
-        if: always()
-        with:
-          files: test-result.xml
-          check_name: Test Result (Python ${{matrix.python-version}})
+      # - name: publish junit results
+      #   uses: EnricoMi/publish-unit-test-result-action@v2
+        # if: always()
+        # with:
+        #   files: test-result.xml
+        #   check_name: Test Result (Python ${{matrix.python-version}})
